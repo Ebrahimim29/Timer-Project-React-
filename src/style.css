@@ -13,6 +13,13 @@ body{
     background: black;
 }
 
+.timer_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .timer{
     width: 200px;
     height: 200px;
@@ -31,12 +38,29 @@ body{
 
 .button{
     width: 5rem;
-    height: 2rem;
-    border-radius: 0.5rem;
+    height: 5rem;
+    border-radius: 50%;
     background-color: aqua;
     color: black;
     margin-top: 1rem;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+}
+
+.button_box{
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.start_button{
+    background-color: green;
+}
+
+.stop_button{
+    background-color: red;
+}
+
+.reset_button{
+    background-color: white;
 }
