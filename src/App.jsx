@@ -4,15 +4,20 @@ import Timer from "./Timer";
 // Function Component:
 const App = () => {
   const [title , setTitle] = useState("Hello My Friend");
+  const [isLight, setIsLight] = useState(false);
 
   const handleSetTitle = () => {
     setTitle("GoodBye My friend");
   }
 
+  const handleSetIsLight = () => {
+    setIsLight(!isLight)
+  }
+
   return (
-    <div className="main">
-      <h1 className="title">{title}</h1>
-      <Timer handleSetTitle={handleSetTitle}/>
+    <div className="main" style={{background:isLight ? "white" : "black"}}>
+      <h1 className="title">{title}</h1>        
+      <Timer handleSetTitle={handleSetTitle} isLight={isLight} handleSetIsLight={handleSetIsLight}/>      
     </div>
   );
 };
