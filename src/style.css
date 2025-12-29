@@ -24,12 +24,17 @@ body{
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    box-shadow: 0 0 50px white;
+    box-shadow: 0 0 50px rgba(255, 255, 255, 0.801);
     align-items: center;
     justify-content: center;
     display: flex;
     background: black;
     color: chocolate;
+    transition: all 1s ease;
+}
+
+.timer:hover{
+    background: gray;
 }
 
 .title{
@@ -63,4 +68,13 @@ body{
 
 .reset_button{
     background-color: white;
+}
+
+.main_time_list{
+    width: auto;
+    height:auto;
+    background-color: yellow;
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1rem;
 }
