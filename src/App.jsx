@@ -26,11 +26,13 @@ const App = () => {
   return (
     <div className="main" style={{background:isLight ? "white" : "black"}}>
       <h1 className="title">{title}</h1>        
-      <Timer handleSetTitle={handleSetTitle} isLight={isLight} handleSetIsLight={handleSetIsLight}/>      
+      <Timer 
+      handleSetTitle={handleSetTitle} 
+      isLight={isLight} handleSetIsLight={handleSetIsLight}
+      timeArr={timeArr}
+      setTimeArr={setTimeArr}/>      
       {/* <TimeList timeArr={timeArr} /> */}
-      <TimeList>
-        {timeArr}
-      </TimeList>
+
     </div>    
   );
 };
