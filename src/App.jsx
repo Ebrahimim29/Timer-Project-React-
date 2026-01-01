@@ -1,39 +1,43 @@
 import { useEffect, useState } from "react";
 import Timer from "./Timer";
 import TimeList from "./TimeList";
+import { TestContext } from "./testContext";
 
 // Function Component:
 const App = () => {
-  const [title , setTitle] = useState("Hello My Friend");
+  const [title, setTitle] = useState("Hello My Friend");
   const [isLight, setIsLight] = useState(false);
   const [timeArr, setTimeArr] = useState(["00 : 05 : 12", "01 : 10 :30"]);
 
   useEffect(() => {
     console.log("useEffect");
-    return() => {
-
-    }
-  },[isLight])
+    return () => {};
+  }, [isLight]);
 
   const handleSetTitle = () => {
     setTitle("GoodBye My friend");
-  }
+  };
 
   const handleSetIsLight = () => {
-    setIsLight(!isLight)
-  }
+    setIsLight(!isLight);
+  };
 
   return (
-    <div className="main" style={{background:isLight ? "white" : "black"}}>
-      <h1 className="title">{title}</h1>        
-      <Timer 
-      handleSetTitle={handleSetTitle} 
-      isLight={isLight} handleSetIsLight={handleSetIsLight}
-      timeArr={timeArr}
-      setTimeArr={setTimeArr}/>      
-      {/* <TimeList timeArr={timeArr} /> */}
-
-    </div>    
+    // <TestContext.Provider value="white">
+    <TestContext.Provider 
+    value={{timeArr:timeArr, setTimeArr:setTimeArr}}>
+      <div className="main" style={{ background: isLight ? "white" : "black" }}>
+        <h1 className="title">{title}</h1>
+        <Timer
+          handleSetTitle={handleSetTitle}
+          isLight={isLight}
+          handleSetIsLight={handleSetIsLight}
+          // timeArr={timeArr}
+          // setTimeArr={setTimeArr}
+        />
+        {/* <TimeList timeArr={timeArr} /> */}
+      </div>
+    </TestContext.Provider>
   );
 };
 
@@ -45,7 +49,7 @@ const App = () => {
 //   constructor() {
 //     super();
 //     this.state = {title:"Hello My Friend"}
-//   }  
+//   }
 // }
 
 // handleSetTitle = () => {
