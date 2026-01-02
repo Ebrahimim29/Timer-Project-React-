@@ -25,7 +25,8 @@ const App = () => {
   return (
     // <TestContext.Provider value="white">
     <TestContext.Provider 
-    value={{timeArr:timeArr, setTimeArr:setTimeArr}}>
+    value={{timeArr, setTimeArr}}> 
+    {/*{timeArr:timeArr,setTimeArr:setTimeArr}----->Object Literal:{timeArr,setTimeArr}*/}
       <div className="main" style={{ background: isLight ? "white" : "black" }}>
         <h1 className="title">{title}</h1>
         <Timer
@@ -36,6 +37,7 @@ const App = () => {
           // setTimeArr={setTimeArr}
         />
         {/* <TimeList timeArr={timeArr} /> */}
+        <TimeList/>
       </div>
     </TestContext.Provider>
   );

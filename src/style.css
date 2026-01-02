@@ -35,7 +35,7 @@ body{
 }
 
 .timer:hover{
-    background: gray;
+    background: rgba(128, 128, 128, 0.575);
 }
 
 .title{
@@ -72,10 +72,13 @@ body{
 }
 
 .main_time_list{
-    width: auto;
-    height:auto;
-    background-color: yellow;
     margin-top: 1rem;
     font-weight: bold;
     font-size: 1rem;
+    cursor: pointer;
+    color: blueviolet;
+}
+
+.main_time_list:hover{
+    text-shadow: 0 0 10px white;
 }
